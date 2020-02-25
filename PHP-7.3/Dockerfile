@@ -27,7 +27,6 @@ RUN yum --enablerepo=remi-php73 -y install php \
                                            php-pecl-apcu \
                                            php-pecl-msgpack \
                                            php-pecl-oci8 \
-                                           php-pecl-redis4 \
                                            php-pecl-redis5
 RUN yum clean all && \
     rm -rf /var/cache/yum
