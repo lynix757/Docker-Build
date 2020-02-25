@@ -17,6 +17,7 @@ RUN yum -y install ntp \
                    bind-utils \
                    vim \
                    curl \
+                   openssl
 RUN yum -y update && \
     yum clean all && \
     rm -rf /var/cache/yum
