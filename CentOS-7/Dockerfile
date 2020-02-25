@@ -6,7 +6,9 @@ RUN yum -y update && yum clean all
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
  && rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
-RUN yum -y install ntp
-RUN yum -y install net-tools
-RUN yum -y install traceroute
-RUN yum -y install vim
+RUN yum -y install ntp \
+                   net-tools \
+                   traceroute \
+                   vim \
+    yum clean all && \
+    rm -rf /var/cache/yum
