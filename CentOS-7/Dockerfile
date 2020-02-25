@@ -6,14 +6,17 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
  && rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 ENV TIMEZONE Asia/Bangkok
-RUN cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
+
+RUN mv /etc/localtime /etc/localtime-ori
+RUN ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
 && echo "${TIMEZONE}" >  /etc/timezone
 
-RUN yum -y update
 RUN yum -y install ntp \
                    net-tools \
                    traceroute \
                    bind-utils \
                    vim \
+                   curl \
+RUN yum -y update && \
     yum clean all && \
     rm -rf /var/cache/yum
