@@ -21,12 +21,12 @@ RUN yum --enablerepo=remi-php73 -y install php \
                                            php-enchant \
                                            php-pecl-igbinary \
                                            php-odbc \
-                                           php-oci8 \
+                                           #php-oci8 \
                                            php-pgsql \
                                            php-pecl-amqp \
                                            php-pecl-apcu \
                                            php-pecl-msgpack \
-                                           php-pecl-oci8 \
+                                           #php-pecl-oci8 \
                                            php-pecl-redis5
 RUN yum clean all && \
     rm -rf /var/cache/yum
